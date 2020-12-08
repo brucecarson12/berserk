@@ -377,7 +377,7 @@ class Games(FmtClient):
 
     def export_by_player(self, username, as_pgn=None, since=None, until=None,
                          max=None, vs=None, rated=None, perf_type=None,
-                         color=None, analysed=None, moves=None, tags=None,
+                         color=None, analysed=None, moves=None, ongoing=True, tags=None,
                          evals=None, opening=None):
         """Get games by player.
 
@@ -395,6 +395,7 @@ class Games(FmtClient):
         :type color: :class:`~berserk.enums.Color`
         :param bool analysed: filter by analysis availability
         :param bool moves: whether to include the PGN moves
+        :param bool ongoing: whether to include ongoing matches
         :param bool tags: whether to include the PGN tags
         :param bool clocks: whether to include clock comments in the PGN moves
         :param bool evals: whether to include analysis evaluation comments in
@@ -414,6 +415,7 @@ class Games(FmtClient):
             'color': color,
             'analysed': analysed,
             'moves': moves,
+            'ongoing': ongoing,
             'tags': tags,
             'evals': evals,
             'opening': opening,
