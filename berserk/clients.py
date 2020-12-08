@@ -404,7 +404,7 @@ class Games(FmtClient):
         :param bool literate: whether to include literate the PGN
         :return: iterator over the exported games, as JSON or PGN
         """
-        path = f'api/games/user/{username}'
+        path = f'api/games/user/{username}?ongoing=true'
         params = {
             'since': since,
             'until': until,
